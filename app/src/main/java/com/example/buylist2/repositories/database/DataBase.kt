@@ -10,18 +10,18 @@ import com.example.buylist2.model.LoginModel
 import com.example.buylist2.repositories.dao.LoginDao
 
 @Database(entities = [LoginModel::class], version = 1)
-abstract class DataBase : RoomDatabase() {
+abstract class ShoppingDataBase : RoomDatabase() {
 
     abstract fun loginDao(): LoginDao
 
     //Singleton
     companion object {
-        private lateinit var INSTANCE: DataBase
+        private lateinit var INSTANCE: ShoppingDataBase
 
-        fun getDataBase(context: Context): DataBase {
+        fun getDataBase(context: Context): ShoppingDataBase {
             if (!::INSTANCE.isInitialized) {
                 synchronized(Database::class) {
-                    INSTANCE = Room.databaseBuilder(context, DataBase::class.java, "dataBase")
+                    INSTANCE = Room.databaseBuilder(context, ShoppingDataBase::class.java, "dataBase")
                         .addMigrations(MIGRATION_1_2)
                         .allowMainThreadQueries()
                         .build()

@@ -6,7 +6,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityLoginBinding
+import com.example.buylist2.viewModel.LoginViewModel
 
 class LoginActivity {
 
