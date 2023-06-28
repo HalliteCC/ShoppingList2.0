@@ -21,10 +21,10 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val sharedPreferences = SharedPreference(application.applicationContext)
 
     private val _login = MutableLiveData<ValidationModel>()
-    private val login: LiveData<ValidationModel> = _login
+    val login: LiveData<ValidationModel> = _login
 
 
-    fun doLogin(email: String, password: String, listener: Listener<LoginModel>) {
+    fun doLogin(email: String, password: String) {
         if (email.isBlank() || password.isBlank()) {
             ValidationModel(getApplication<Application>().applicationContext.getString(R.string.fill_all_fields))
             return

@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
+import androidx.navigation.findNavController
 import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityLoginBinding
 import com.example.buylist2.viewModel.LoginViewModel
@@ -39,12 +41,15 @@ class LoginActivity {
             if (v.id == R.id.button_login) {
                 handleLogin()
             } else if (v.id == R.id.text_register) {
-                startActivity(Intent(this, RegisterActivity::class.java))
+                binding.textRegister.setOnClickListener{
+                    val navController = findNavController(R.id.nav_host_fragment_content_main)
+                    val navigation: NavDirections
+                }
             }
         }
 
         private fun observe() {
-            viewModel.verifyAuthentication()
+            viewModel.verifyLogin()
             viewModel.login.observe(this) {
                 if (it.status()) {
                     startActivity(Intent(applicationContext, MainActivity::class.java))

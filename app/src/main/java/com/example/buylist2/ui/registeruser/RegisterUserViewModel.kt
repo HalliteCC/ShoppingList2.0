@@ -1,10 +1,10 @@
-package com.example.buylist2.ui.home
+package com.example.buylist2.ui.registeruser
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class RegisterUserViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
