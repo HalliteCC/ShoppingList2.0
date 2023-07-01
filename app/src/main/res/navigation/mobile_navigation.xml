@@ -23,5 +23,6 @@
     <fragment
         android:id="@+id/userRegisterFragment"
         android:name="com.example.buylist2.ui.registeruser.UserRegisterFragment"
-        android:label="UserRegisterFragment" />
+        android:label="UserRegisterFragment" >
+    </fragment>
 </navigation>

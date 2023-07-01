@@ -7,6 +7,11 @@
     android:padding="16dp"
     android:background="@drawable/background">
 
+    <FrameLayout
+        android:id="@+id/userRegisterFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ImageView
         android:id="@+id/image_logo"
         android:layout_width="240dp"

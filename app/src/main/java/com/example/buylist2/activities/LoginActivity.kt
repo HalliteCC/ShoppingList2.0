@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         //layout
         setContentView(binding.root)
 
+
         binding.buttonLogin.setOnClickListener(this)
         binding.textRegister.setOnClickListener(this)
 
@@ -40,10 +41,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             handleLogin()
         } else if (v.id == R.id.text_register) {
             binding.textRegister.setOnClickListener {
+                val fragment = UserRegisterFragment()
                 val fragmentManager = supportFragmentManager
                 val transition = fragmentManager.beginTransaction()
-                val userRegisterFragment = UserRegisterFragment()
-                transition.add(R.id.userRegisterFragment, userRegisterFragment)
+                transition.replace(android.R.id.content, fragment)
+                transition.addToBackStack(null)
                 transition.commit()
             }
         }

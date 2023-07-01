@@ -10,16 +10,19 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="sign_up">sign_up</string>
+    <string name="sign_up">Sign Up</string>
     <string name="do_not_have_an_account">Do not have an account?</string>
     <string name="login">login</string>
     <string name="password">password</string>
     <string name="email">email</string>
 
 
-    <string name="ERROR_INTERNET_CONNECTION">Conexão à internet necessária para uso da applicação.</string>
+    <string name="ERROR_INTERNET_CONNECTION">This app required internet connection</string>
 
+    <string name="successful_registration">Successful registration</string>
+    <string name="already_registered">Email is already registered</string>
     <string name="USER_EXISTED">This user is already registered.</string>
     <string name="fill_all_fields">\"Please, fill in all fields \"</string>
     <string name="ERROR_LOGIN">User or Incorrect Password .</string>
+    <string name="name">name</string>
 </resources>

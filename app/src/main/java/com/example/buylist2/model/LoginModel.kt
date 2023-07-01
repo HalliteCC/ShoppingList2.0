@@ -12,10 +12,6 @@ class LoginModel (
     @ColumnInfo(name = "id")
     val id: Int = 0,
 
-    @ColumnInfo(name = "name")
-    @NonNull
-    val name: String,
-
     @ColumnInfo(name = "email")
     @NonNull
     val email: String,
