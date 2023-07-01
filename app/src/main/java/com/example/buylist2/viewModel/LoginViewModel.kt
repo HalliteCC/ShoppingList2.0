@@ -23,7 +23,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val _login = MutableLiveData<ValidationModel>()
     val login: LiveData<ValidationModel> = _login
 
-
+//Function to do verification and store the data on sharedPreference to do Login
     fun doLogin(email: String, password: String) {
         if (email.isBlank() || password.isBlank()) {
             ValidationModel(getApplication<Application>().applicationContext.getString(R.string.fill_all_fields))
@@ -47,6 +47,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
+    //Function to check if the user is logged
     fun verifyLogin() {
         val getEmail = sharedPreferences.get(ShoppingConstant.LOGIN.KEY_EMAIL)
 

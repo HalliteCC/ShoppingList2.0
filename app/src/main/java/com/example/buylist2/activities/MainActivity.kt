@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavDirections
 import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityMainBinding
-import com.example.buylist2.ui.home.HomeFragmentDirections
-import com.example.buylist2.ui.slideshow.SlideshowFragmentDirections
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,11 +34,11 @@ class MainActivity : AppCompatActivity() {
             val currentFragmentId = navController.currentDestination?.id
             val navigation: NavDirections
             if(currentFragmentId == R.id.nav_home){
-                navigation = HomeFragmentDirections.actionNavHomeToProductsFragment()
+                /*navigation = HomeFragmentDirections.actionNavHomeToProductsFragment()
                 navController.navigate(navigation)
             }else if(currentFragmentId == R.id.nav_slideshow) {
                 navigation = SlideshowFragmentDirections.actionNavSlideshowToNavGallery()
-                navController.navigate(navigation)
+                navController.navigate(navigation)*/
             }
 
         }

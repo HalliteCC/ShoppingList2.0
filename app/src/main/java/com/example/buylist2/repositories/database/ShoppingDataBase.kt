@@ -7,12 +7,12 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.buylist2.model.LoginModel
-import com.example.buylist2.repositories.dao.LoginDao
+import com.example.buylist2.repositories.dao.LoginDAO
 
 @Database(entities = [LoginModel::class], version = 1)
 abstract class ShoppingDataBase : RoomDatabase() {
 
-    abstract fun loginDao(): LoginDao
+    abstract fun loginDao(): LoginDAO
 
     //Singleton
     companion object {
@@ -20,14 +20,13 @@ abstract class ShoppingDataBase : RoomDatabase() {
 
         fun getDataBase(context: Context): ShoppingDataBase {
             if (!::INSTANCE.isInitialized) {
-                synchronized(Database::class) {
-                    INSTANCE = Room.databaseBuilder(context, ShoppingDataBase::class.java, "dataBase")
+                synchronized(ShoppingDataBase::class) {
+                    INSTANCE = Room.databaseBuilder(context, ShoppingDataBase::class.java, "shoppingdb")
                         .addMigrations(MIGRATION_1_2)
                         .allowMainThreadQueries()
                         .build()
                 }
             }
-
             return INSTANCE
         }
 

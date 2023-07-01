@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.buylist2.databinding.FragmentHomeBinding
+import com.example.buylist2.databinding.FragmentUserRegisterBinding
 
-class RegisterUserFragment : Fragment() {
+class UserRegisterFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentUserRegisterBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class RegisterUserFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(RegisterUserViewModel::class.java)
+        val userRegisterViewModel =
+            ViewModelProvider(this).get(UserRegisterViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentUserRegisterBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        userRegisterViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

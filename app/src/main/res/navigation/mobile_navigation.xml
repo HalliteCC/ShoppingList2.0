@@ -20,4 +20,8 @@
         android:id="@+id/loginActivity"
         android:name="com.example.buylist2.activities.LoginActivity"
         android:label="LoginActivity" />
+    <fragment
+        android:id="@+id/userRegisterFragment"
+        android:name="com.example.buylist2.ui.registeruser.UserRegisterFragment"
+        android:label="UserRegisterFragment" />
 </navigation>
