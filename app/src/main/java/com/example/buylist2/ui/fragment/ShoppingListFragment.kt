@@ -1,5 +1,6 @@
 package com.example.buylist2.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buylist2.R
 import com.example.buylist2.adapter.ShoppingListAdapter
+import com.example.buylist2.constant.ShoppingConstant
 import com.example.buylist2.databinding.FragmentShoppingListBinding
 import com.example.buylist2.listener.ShoppingListListener
 import com.example.buylist2.viewModel.ShoppingListViewModel
@@ -24,8 +26,6 @@ class ShoppingListFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
-
     private val adapter = ShoppingListAdapter()
 
 
@@ -53,14 +53,10 @@ class ShoppingListFragment : Fragment() {
             }
 
             //Function to open ShoppingList Register
-           override fun onEditClick(id: Int) {
-
-                /*val intent = Intent(context, BuyListActivity::class.java)
-                val bundle = Bundle()
-                bundle.putInt(ShoppingConstant.LIST.LIST_ID, id)
-                intent.putExtras(bundle)
-
-                startActivity(intent)*/
+            override fun onEditClick(id: Int) {
+                val bundle = bundleOf("listID" to id)
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.shoppingListRegisterFragment, bundle)
             }
 
             //Function to delete a ShoppingList item in the List
@@ -91,7 +87,7 @@ class ShoppingListFragment : Fragment() {
     }
 
     private fun observe() {
-        viewModel.buy.observe(viewLifecycleOwner) {
+        viewModel.shopping.observe(viewLifecycleOwner) {
             adapter.updateTasks(it)
         }
     }

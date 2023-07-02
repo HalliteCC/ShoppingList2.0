@@ -13,6 +13,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.ui.*
 import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityMainBinding
+import com.example.buylist2.ui.fragment.ShoppingListFragmentDirections
 import com.example.buylist2.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+
     fun setupNavigation(){
         //FAB para duas activity
         binding.appBarMain.fab.setOnClickListener {
@@ -42,12 +49,12 @@ class MainActivity : AppCompatActivity() {
             val currentFragmentId = navController.currentDestination?.id
             val navigation: NavDirections
             if(currentFragmentId == R.id.shopping_List){
-                /*navigation = HomeFragmentDirections.actionNavHomeToProductsFragment()
+                navigation = ShoppingListFragmentDirections.actionShoppingListToShoppingListRegisterFragment()
                 navController.navigate(navigation)
-            }else if(currentFragmentId == R.id.nav_slideshow) {
-                navigation = SlideshowFragmentDirections.actionNavSlideshowToNavGallery()
-                navController.navigate(navigation)*/
-            }
+            }/*else if(currentFragmentId == R.id.items_list) {
+                navigation = .actionNavSlideshowToNavGallery()
+                navController.navigate(navigation)
+            }*/
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -77,14 +84,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
+
+
 }

@@ -25,4 +25,5 @@ class ShoppingListRegisterViewModel (application: Application) : AndroidViewMode
     fun update(buyList: ShoppingListModel) {
         shoppingListRepository.updateList(buyList)
     }
+
 }

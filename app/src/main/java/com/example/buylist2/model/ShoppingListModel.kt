@@ -14,5 +14,4 @@ class ShoppingListModel {
     @ColumnInfo(name = "listName")
     var listName: String = ""
 
-
 }

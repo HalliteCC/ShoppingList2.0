@@ -14,10 +14,13 @@
         <action
             android:id="@+id/action_shopping_List_to_productsFragment"
             app:destination="@id/items_list" />
+        <action
+            android:id="@+id/action_shopping_List_to_shoppingListRegisterFragment"
+            app:destination="@id/shoppingListRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/items_list"
-        android:name="com.example.buylist2.ui.fragment.ItemsFragment"
+        android:name="com.example.buylist2.ui.fragment.ItemsListFragment"
         android:label="Items List"
         tools:layout="@layout/fragment_items">
         <argument
@@ -37,5 +40,13 @@
         <action
             android:id="@+id/action_userRegisterFragment_to_loginActivity"
             app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingListRegisterFragment"
+        android:name="com.example.buylist2.ui.fragment.ShoppingListRegisterFragment"
+        android:label="Shopping List Add">
+        <action
+            android:id="@+id/action_shoppingListRegisterFragment_to_shopping_List"
+            app:destination="@id/shopping_List" />
     </fragment>
 </navigation>

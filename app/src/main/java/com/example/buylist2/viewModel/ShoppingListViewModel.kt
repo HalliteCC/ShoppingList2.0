@@ -18,13 +18,13 @@ class ShoppingListViewModel (application: Application) : AndroidViewModel(applic
     private val _delete = MutableLiveData<ValidationModel>()
     val delete: LiveData<ValidationModel> = _delete
 
-    private val _buy = MutableLiveData<List<ShoppingListModel>>()
-    val buy: LiveData<List<ShoppingListModel>> = _buy
+    private val _shopping = MutableLiveData<List<ShoppingListModel>>()
+    val shopping: LiveData<List<ShoppingListModel>> = _shopping
     val nameList = MutableLiveData<List<String>>()
 
 
     fun getAll() {
-        _buy.value = shoppingListRepository.getAll()
+        _shopping.value = shoppingListRepository.getAll()
     }
 
     fun delete(id: Int) {

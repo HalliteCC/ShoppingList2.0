@@ -1,6 +1,5 @@
 package com.example.buylist2.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,7 @@ import com.example.buylist2.databinding.FragmentItemsBinding
 import com.example.buylist2.listener.ItemsListener
 import com.example.buylist2.viewModel.ItemsViewModel
 
-class ItemsFragment : Fragment() {
+class ItemsListFragment : Fragment() {
 
     private lateinit var viewModel: ItemsViewModel
     private var _binding: FragmentItemsBinding? = null

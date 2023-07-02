@@ -1,4 +1,4 @@
 package com.example.buylist2.ui.fragment
 
-class ItemRegister {
+class ItemRegisterFragment {
 }
