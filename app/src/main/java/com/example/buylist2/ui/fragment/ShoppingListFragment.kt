@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buylist2.R
+import com.example.buylist2.adapter.ShoppingListAdapter
 import com.example.buylist2.databinding.FragmentShoppingListBinding
 import com.example.buylist2.listener.ShoppingListListener
 import com.example.buylist2.viewModel.ShoppingListViewModel
@@ -25,7 +26,7 @@ class ShoppingListFragment : Fragment() {
     private val binding get() = _binding!!
 
 
-    //private val adapter = BuyListAdapter()
+    private val adapter = ShoppingListAdapter()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, b: Bundle?): View {
@@ -39,7 +40,7 @@ class ShoppingListFragment : Fragment() {
         binding.recyclerShoppingList.layoutManager = LinearLayoutManager(context)
 
         //adapter
-        //binding.recyclerShoppingList.adapter = adapter
+        binding.recyclerShoppingList.adapter = adapter
 
 
         //Click Event
@@ -71,7 +72,7 @@ class ShoppingListFragment : Fragment() {
 
         }
 
-        //adapter.attachListener(listener)
+        adapter.attachListener(listener)
 
         observe()
 
@@ -91,7 +92,7 @@ class ShoppingListFragment : Fragment() {
 
     private fun observe() {
         viewModel.buy.observe(viewLifecycleOwner) {
-            //adapter.updateTasks(it)
+            adapter.updateTasks(it)
         }
     }
 
