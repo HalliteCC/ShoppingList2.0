@@ -7,7 +7,7 @@ interface ShoppingListListener {
 
 
     //Click para edição
-    fun onListClick(id: Int)
+    fun onEditClick(id: Int)
 
     //Remoção
     fun onDeleteClick(id: Int)

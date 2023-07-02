@@ -1,4 +1,4 @@
-package com.example.buylist2.ui.shoppingList
+package com.example.buylist2.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

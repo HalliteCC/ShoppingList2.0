@@ -1,10 +1,10 @@
-package com.example.buylist2.ui.products
+package com.example.buylist2.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ProductsViewModel : ViewModel() {
+class ItemsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"

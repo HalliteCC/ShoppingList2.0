@@ -1,4 +1,4 @@
-package com.example.buylist2.activities
+package com.example.buylist2.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityLoginBinding
-import com.example.buylist2.ui.registeruser.UserRegisterFragment
+import com.example.buylist2.ui.fragment.UserRegisterFragment
 import com.example.buylist2.viewModel.LoginViewModel
 
 

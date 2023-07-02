@@ -1,17 +1,17 @@
-package com.example.buylist2.ui.registeruser
+package com.example.buylist2.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.buylist2.R
-import com.example.buylist2.activities.LoginActivity
+import com.example.buylist2.ui.activities.LoginActivity
 import com.example.buylist2.databinding.FragmentUserRegisterBinding
+import com.example.buylist2.viewModel.UserRegisterViewModel
 
 class UserRegisterFragment : Fragment() {
 

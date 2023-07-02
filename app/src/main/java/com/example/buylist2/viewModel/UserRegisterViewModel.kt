@@ -1,11 +1,9 @@
-package com.example.buylist2.ui.registeruser
+package com.example.buylist2.viewModel
 
 import android.app.Application
-import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.buylist2.R
 import com.example.buylist2.listener.Listener
 import com.example.buylist2.model.LoginModel

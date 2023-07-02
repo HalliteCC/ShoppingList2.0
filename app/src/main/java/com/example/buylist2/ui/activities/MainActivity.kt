@@ -1,4 +1,4 @@
-package com.example.buylist2.activities
+package com.example.buylist2.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -30,13 +30,18 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        //Navigation
+        setupNavigation()
 
+    }
+
+    fun setupNavigation(){
         //FAB para duas activity
         binding.appBarMain.fab.setOnClickListener {
             val navController = findNavController(R.id.nav_host_fragment_content_main)
             val currentFragmentId = navController.currentDestination?.id
             val navigation: NavDirections
-            if(currentFragmentId == R.id.nav_home){
+            if(currentFragmentId == R.id.shopping_List){
                 /*navigation = HomeFragmentDirections.actionNavHomeToProductsFragment()
                 navController.navigate(navigation)
             }else if(currentFragmentId == R.id.nav_slideshow) {
@@ -47,11 +52,12 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_logout
+                R.id.shopping_List, R.id.items_list, R.id.nav_logout
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

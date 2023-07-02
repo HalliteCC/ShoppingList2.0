@@ -9,8 +9,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.buylist2.model.LoginModel
 import com.example.buylist2.dao.LoginDAO
 import com.example.buylist2.dao.ShoppingListDAO
+import com.example.buylist2.model.ShoppingListModel
 
-@Database(entities = [LoginModel::class], version = 1)
+
+@Database(entities = [LoginModel::class, ShoppingListModel::class], version = 1)
 abstract class ShoppingDataBase : RoomDatabase() {
 
     abstract fun loginDao(): LoginDAO
@@ -25,6 +27,7 @@ abstract class ShoppingDataBase : RoomDatabase() {
                 synchronized(ShoppingDataBase::class) {
                     INSTANCE = Room.databaseBuilder(context, ShoppingDataBase::class.java, "shoppingdb")
                         .addMigrations(MIGRATION_1_2)
+                        .addMigrations(MIGRATION_1_2_Shopping)
                         .allowMainThreadQueries()
                         .build()
                 }
@@ -33,6 +36,11 @@ abstract class ShoppingDataBase : RoomDatabase() {
         }
 
         private val MIGRATION_1_2: Migration = object : Migration(1,2){
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("DELETE FROM Login")
+            }
+        }
+        private val MIGRATION_1_2_Shopping: Migration = object : Migration(1,2){
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL("DELETE FROM Login")
             }

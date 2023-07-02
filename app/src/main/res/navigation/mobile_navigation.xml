@@ -3,30 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_gallery">
+    app:startDestination="@+id/shopping_List">
 
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.buylist2.ui.shoppingList.ShoppingListFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_shopping_list" />
+        android:id="@+id/shopping_List"
+        android:name="com.example.buylist2.ui.fragment.ShoppingListFragment"
+        android:label="Shopping List"
+        tools:layout="@layout/fragment_shopping_list" >
+        <action
+            android:id="@+id/action_shopping_List_to_productsFragment"
+            app:destination="@id/items_list" />
+    </fragment>
     <fragment
-        android:id="@+id/productsFragment"
-        android:name="com.example.buylist2.ui.products.ProductsFragment"
-        android:label="ProductsFragment"
-        tools:layout="@layout/fragment_products">
+        android:id="@+id/items_list"
+        android:name="com.example.buylist2.ui.fragment.ItemsFragment"
+        android:label="Items List"
+        tools:layout="@layout/fragment_items">
         <argument
             android:name="ListID"
-            app:argType="integer" />
+            app:argType="integer"/>
     </fragment>
+
+
     <activity
         android:id="@+id/loginActivity"
-        android:name="com.example.buylist2.activities.LoginActivity"
+        android:name="com.example.buylist2.ui.activities.LoginActivity"
         android:label="LoginActivity" />
     <fragment
         android:id="@+id/userRegisterFragment"
-        android:name="com.example.buylist2.ui.registeruser.UserRegisterFragment"
+        android:name="com.example.buylist2.ui.fragment.UserRegisterFragment"
         android:label="UserRegisterFragment" >
+        <action
+            android:id="@+id/action_userRegisterFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
 </navigation>

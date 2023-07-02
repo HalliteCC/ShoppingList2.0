@@ -15,9 +15,9 @@ interface ShoppingListDAO {
     @Update
     fun updateList (shoppingList: ShoppingListModel): Int
 
-    @Query("SELECT * FROM BuyList WHERE id = :id")
+    @Query("SELECT * FROM ShoppingList WHERE id = :id")
     fun get(id: Int): ShoppingListModel
 
-    @Query("SELECT * FROM BuyList")
+    @Query("SELECT * FROM ShoppingList")
     fun getList(): List<ShoppingListModel>
 }
