@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.buylist2.repositories.constant.ShoppingConstant
-import com.example.buylist2.repositories.securitypreference.SharedPreference
+import com.example.buylist2.constant.ShoppingConstant
+import com.example.buylist2.securitypreference.SharedPreference
 
 class MainViewModel (application: Application) : AndroidViewModel(application){
 

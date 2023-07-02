@@ -8,14 +8,18 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.buylist2.ui.gallery.GalleryFragment"
+        android:name="com.example.buylist2.ui.shoppingList.ShoppingListFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_shopping_list" />
     <fragment
         android:id="@+id/productsFragment"
         android:name="com.example.buylist2.ui.products.ProductsFragment"
         android:label="ProductsFragment"
-        tools:layout="@layout/fragment_products"/>
+        tools:layout="@layout/fragment_products">
+        <argument
+            android:name="ListID"
+            app:argType="integer" />
+    </fragment>
     <activity
         android:id="@+id/loginActivity"
         android:name="com.example.buylist2.activities.LoginActivity"

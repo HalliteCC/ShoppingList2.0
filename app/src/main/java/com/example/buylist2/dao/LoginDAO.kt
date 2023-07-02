@@ -1,4 +1,4 @@
-package com.example.buylist2.repositories.dao
+package com.example.buylist2.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

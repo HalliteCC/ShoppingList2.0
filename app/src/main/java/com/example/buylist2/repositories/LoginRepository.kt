@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.buylist2.R
 import com.example.buylist2.listener.Listener
 import com.example.buylist2.model.LoginModel
-import com.example.buylist2.repositories.database.ShoppingDataBase
+import com.example.buylist2.database.ShoppingDataBase
 
 class LoginRepository(context: Context) : BaseRepository(context) {
 

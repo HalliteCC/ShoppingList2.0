@@ -11,8 +11,8 @@ import com.example.buylist2.listener.Listener
 import com.example.buylist2.model.LoginModel
 import com.example.buylist2.model.ValidationModel
 import com.example.buylist2.repositories.LoginRepository
-import com.example.buylist2.repositories.constant.ShoppingConstant
-import com.example.buylist2.repositories.securitypreference.SharedPreference
+import com.example.buylist2.constant.ShoppingConstant
+import com.example.buylist2.securitypreference.SharedPreference
 
 class UserRegisterViewModel (application: Application) : AndroidViewModel(application) {
 

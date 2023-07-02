@@ -1,4 +1,4 @@
-package com.example.buylist2.repositories.constant
+package com.example.buylist2.constant
 
 class ShoppingConstant private constructor() {
 

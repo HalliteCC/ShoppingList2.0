@@ -1,4 +1,4 @@
-package com.example.buylist2.repositories.database
+package com.example.buylist2.database
 
 import android.content.Context
 import androidx.room.Database
@@ -7,19 +7,21 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.buylist2.model.LoginModel
-import com.example.buylist2.repositories.dao.LoginDAO
+import com.example.buylist2.dao.LoginDAO
+import com.example.buylist2.dao.ShoppingListDAO
 
 @Database(entities = [LoginModel::class], version = 1)
 abstract class ShoppingDataBase : RoomDatabase() {
 
     abstract fun loginDao(): LoginDAO
+    abstract fun shoppingDao(): ShoppingListDAO
 
     //Singleton
     companion object {
         private lateinit var INSTANCE: ShoppingDataBase
 
         fun getDataBase(context: Context): ShoppingDataBase {
-            if (!::INSTANCE.isInitialized) {
+            if (!Companion::INSTANCE.isInitialized) {
                 synchronized(ShoppingDataBase::class) {
                     INSTANCE = Room.databaseBuilder(context, ShoppingDataBase::class.java, "shoppingdb")
                         .addMigrations(MIGRATION_1_2)
