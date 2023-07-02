@@ -6,17 +6,20 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.buylist2.dao.ItemsDAO
 import com.example.buylist2.model.LoginModel
 import com.example.buylist2.dao.LoginDAO
 import com.example.buylist2.dao.ShoppingListDAO
+import com.example.buylist2.model.ItemsModel
 import com.example.buylist2.model.ShoppingListModel
 
 
-@Database(entities = [LoginModel::class, ShoppingListModel::class], version = 1)
+@Database(entities = [LoginModel::class, ShoppingListModel::class, ItemsModel::class], version = 1)
 abstract class ShoppingDataBase : RoomDatabase() {
 
     abstract fun loginDao(): LoginDAO
     abstract fun shoppingDao(): ShoppingListDAO
+    abstract fun itemsDao(): ItemsDAO
 
     //Singleton
     companion object {

@@ -10,7 +10,7 @@ import com.example.buylist2.model.LoginModel
 import com.example.buylist2.model.ValidationModel
 import com.example.buylist2.repositories.LoginRepository
 import com.example.buylist2.constant.ShoppingConstant
-import com.example.buylist2.securitypreference.SharedPreference
+import com.example.buylist2.sharedpreference.SharedPreference
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 

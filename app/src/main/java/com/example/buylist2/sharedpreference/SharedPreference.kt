@@ -1,4 +1,4 @@
-package com.example.buylist2.securitypreference
+package com.example.buylist2.sharedpreference
 
 import android.content.Context
 import android.content.SharedPreferences
