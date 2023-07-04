@@ -25,4 +25,8 @@
     <string name="fill_all_fields">\"Please, fill in all fields \"</string>
     <string name="ERROR_LOGIN">User or Incorrect Password .</string>
     <string name="name">name</string>
+    <string name="product_s_name">product\'s name</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="save_new_product">Save new product</string>
 </resources>

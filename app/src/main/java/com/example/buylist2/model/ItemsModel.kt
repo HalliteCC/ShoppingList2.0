@@ -14,8 +14,8 @@ class ItemsModel {
     @ColumnInfo(name = "listId")
     var listId: Int = 0
 
-    @ColumnInfo(name = "products")
-    var products: String = ""
+    @ColumnInfo(name = "items")
+    var item: String = ""
 
     @ColumnInfo(name = "total price")
     var totalPrice: Double = 0.0

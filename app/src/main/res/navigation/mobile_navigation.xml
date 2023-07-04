@@ -26,6 +26,9 @@
         <argument
             android:name="ListID"
             app:argType="integer"/>
+        <action
+            android:id="@+id/action_items_list_to_itemRegisterFragment"
+            app:destination="@id/itemRegisterFragment" />
     </fragment>
 
 
@@ -49,4 +52,8 @@
             android:id="@+id/action_shoppingListRegisterFragment_to_shopping_List"
             app:destination="@id/shopping_List" />
     </fragment>
+    <fragment
+        android:id="@+id/itemRegisterFragment"
+        android:name="com.example.buylist2.ui.fragment.ItemRegisterFragment"
+        android:label="ItemRegisterFragment" />
 </navigation>

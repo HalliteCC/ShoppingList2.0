@@ -13,6 +13,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.ui.*
 import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityMainBinding
+import com.example.buylist2.ui.fragment.ItemsListFragmentDirections
 import com.example.buylist2.ui.fragment.ShoppingListFragmentDirections
 import com.example.buylist2.viewModel.MainViewModel
 
@@ -51,10 +52,10 @@ class MainActivity : AppCompatActivity() {
             if(currentFragmentId == R.id.shopping_List){
                 navigation = ShoppingListFragmentDirections.actionShoppingListToShoppingListRegisterFragment()
                 navController.navigate(navigation)
-            }/*else if(currentFragmentId == R.id.items_list) {
-                navigation = .actionNavSlideshowToNavGallery()
+            }else if(currentFragmentId == R.id.items_list) {
+                navigation = ItemsListFragmentDirections.actionItemsListToItemRegisterFragment()
                 navController.navigate(navigation)
-            }*/
+            }
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView

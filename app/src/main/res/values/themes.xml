@@ -27,6 +27,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="viewDivider">
+        <item name="android:background">@color/purple_500</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
     <style name="Theme.BuyList2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.BuyList2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

@@ -24,7 +24,7 @@ class ItemRegisterViewModel (application: Application) : AndroidViewModel(applic
         _itemSave.value = itemsRepository.get(id)
     }
 
-    fun insetItem(products: ItemsModel) {
+    fun insertItem(products: ItemsModel) {
         itemsRepository.insertProduct(products)
     }
 

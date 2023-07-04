@@ -12,7 +12,7 @@ class ItemsViewHolder (private val productBinding : RowItemListBinding, private 
     : RecyclerView.ViewHolder(productBinding.root) {
 
     fun bind(list: ItemsModel){
-        productBinding.textProduct.text = list.products
+        productBinding.textProduct.text = list.item
         productBinding.TotalPrice.text = list.totalPrice.toString()
         productBinding.textPrice.text = list.price.toString()
         productBinding.textQuantity.text = list.quantity.toString()
