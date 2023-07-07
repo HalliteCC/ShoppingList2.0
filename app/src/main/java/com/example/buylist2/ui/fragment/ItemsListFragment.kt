@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.buylist2.R
 import com.example.buylist2.adapter.ItemListAdapter
+import com.example.buylist2.constant.ShoppingConstant
 import com.example.buylist2.databinding.FragmentItemsBinding
 import com.example.buylist2.listener.ItemsListener
 import com.example.buylist2.viewModel.ItemsViewModel
@@ -33,12 +37,12 @@ class ItemsListFragment : Fragment() {
         binding.recyclerItems.adapter = adapter
 
         val listener = object : ItemsListener {
-            override fun onClick(id: Int) {
-                /* val intent = Intent(context, RegisterProductAtivity::class.java)
-                val bundle = Bundle()
-                bundle.putInt(BuyConstants.LIST.LIST_ID, id)
-                intent.putExtras(bundle)
-                startActivity(intent)*/
+
+            override fun onEditClick(id: Int) {
+                val bundle = bundleOf(ShoppingConstant.LIST.ITEM_ID to id)
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.itemRegisterFragment, bundle)
+
             }
 
             override fun onDelete(id: Int) {
@@ -64,7 +68,7 @@ class ItemsListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        arguments?.getInt("listID")?.let {
+        arguments?.getInt("ListID")?.let {
             viewModel.getAllProducts(it)
         }
 

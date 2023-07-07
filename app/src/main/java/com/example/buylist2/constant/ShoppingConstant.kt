@@ -10,6 +10,7 @@ class ShoppingConstant private constructor() {
 
     object LIST {
         const val LIST_ID = "listId"
+        const val ITEM_ID = "itemId"
     }
 
 }

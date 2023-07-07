@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.buylist2.constant.ShoppingConstant
 import com.example.buylist2.databinding.FragmentItemRegisterBinding
 import com.example.buylist2.model.ItemsModel
@@ -73,7 +75,7 @@ class ItemRegisterFragment : Fragment() {
     private fun loadData() {
         val bundle = arguments
         if (bundle != null) {
-            itemId = bundle.getInt(ShoppingConstant.LIST.LIST_ID)
+            itemId = bundle.getInt(ShoppingConstant.LIST.ITEM_ID)
             viewModel.get(itemId)
         }
     }
@@ -142,7 +144,7 @@ class ItemRegisterFragment : Fragment() {
         }
     }
 
-    private fun backImmediate(){
+    private fun backImmediate() {
         val fragmentManager = requireActivity().supportFragmentManager
         fragmentManager.popBackStackImmediate()
     }

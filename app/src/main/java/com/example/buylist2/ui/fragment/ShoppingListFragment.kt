@@ -49,12 +49,12 @@ class ShoppingListFragment : Fragment() {
             //Function to open products fragment when an item of the list is clicked
             override fun onOpenFragment(id: Int) {
                 val navController = Navigation.findNavController(binding.root)
-                navController.navigate(R.id.items_list, args = bundleOf("listID" to id))
+                navController.navigate(R.id.items_list, args = bundleOf("ListID" to id))
             }
 
             //Function to open ShoppingList Register
             override fun onEditClick(id: Int) {
-                val bundle = bundleOf("listID" to id)
+                val bundle = bundleOf(ShoppingConstant.LIST.LIST_ID to id)
                 Navigation.findNavController(binding.root)
                     .navigate(R.id.shoppingListRegisterFragment, bundle)
             }

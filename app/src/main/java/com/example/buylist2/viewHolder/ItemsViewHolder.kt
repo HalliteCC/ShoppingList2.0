@@ -8,23 +8,23 @@ import com.example.buylist2.databinding.RowItemListBinding
 import com.example.buylist2.listener.ItemsListener
 import com.example.buylist2.model.ItemsModel
 
-class ItemsViewHolder (private val productBinding : RowItemListBinding, private val listener: ItemsListener)
-    : RecyclerView.ViewHolder(productBinding.root) {
+class ItemsViewHolder (private val itemBinding : RowItemListBinding, private val listener: ItemsListener)
+    : RecyclerView.ViewHolder(itemBinding.root) {
 
     fun bind(list: ItemsModel){
-        productBinding.textProduct.text = list.item
-        productBinding.TotalPrice.text = list.totalPrice.toString()
-        productBinding.textPrice.text = list.price.toString()
-        productBinding.textQuantity.text = list.quantity.toString()
+        itemBinding.textProduct.text = list.item
+        itemBinding.TotalPrice.text = list.totalPrice.toString()
+        itemBinding.textPrice.text = list.price.toString()
+        itemBinding.textQuantity.text = list.quantity.toString()
 
 
         if (list.complete){
-            productBinding.imageTask.setImageResource(R.drawable.ic_done)
+            itemBinding.imageTask.setImageResource(R.drawable.ic_done)
         }else {
-            productBinding.imageTask.setImageResource(R.drawable.ic_todo)
+            itemBinding.imageTask.setImageResource(R.drawable.ic_todo)
         }
 
-        productBinding.imageTask.setOnClickListener(View.OnClickListener {
+        itemBinding.imageTask.setOnClickListener {
             val productId = list.id
             val isComplete = list.complete
 
@@ -33,13 +33,13 @@ class ItemsViewHolder (private val productBinding : RowItemListBinding, private 
             } else {
                 listener.onCompleteClick(productId)
             }
-        })
+        }
 
 
 
-        productBinding.textProduct.setOnClickListener { listener.onClick(list.id) }
+        itemBinding.textProduct.setOnClickListener { listener.onEditClick(list.id) }
 
-        productBinding.textProduct.setOnLongClickListener {
+        itemBinding.textProduct.setOnLongClickListener {
             AlertDialog.Builder(itemView.context)
                 .setTitle("Remoção da Produto")
                 .setMessage("Tem certeza que deseja remover?")

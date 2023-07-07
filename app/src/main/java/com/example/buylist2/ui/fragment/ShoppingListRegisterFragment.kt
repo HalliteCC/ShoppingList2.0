@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.buylist2.constant.ShoppingConstant
 import com.example.buylist2.databinding.FragmentShoppingListRegisterBinding
 import com.example.buylist2.model.ShoppingListModel
 import com.example.buylist2.viewModel.ShoppingListRegisterViewModel
@@ -36,8 +37,9 @@ class ShoppingListRegisterFragment : Fragment() {
         val root: View = binding.root
 
 
-        newShopping()
+
         observer()
+        newShopping()
         loadData()
 
         return root
@@ -58,7 +60,7 @@ class ShoppingListRegisterFragment : Fragment() {
     private fun loadData() {
         val bundle = arguments
         if (bundle != null) {
-            listId = bundle.getInt("listID")
+            listId = bundle.getInt(ShoppingConstant.LIST.LIST_ID)
             viewModel.get(listId)
         }
     }

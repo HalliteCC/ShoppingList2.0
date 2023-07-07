@@ -3,7 +3,7 @@ package com.example.buylist2.listener
 interface ItemsListener {
 
     //Click para edição
-    fun onClick(id: Int)
+    fun onEditClick(id: Int)
 
     //Click para remoção
     fun onDelete (id: Int)

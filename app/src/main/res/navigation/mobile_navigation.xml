@@ -49,11 +49,15 @@
         android:name="com.example.buylist2.ui.fragment.ShoppingListRegisterFragment"
         android:label="Shopping List Add">
         <action
-            android:id="@+id/action_shoppingListRegisterFragment_to_shopping_List"
-            app:destination="@id/shopping_List" />
+            android:id="@+id/action_shoppingListRegisterFragment_to_itemRegisterFragment"
+            app:destination="@id/itemRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemRegisterFragment"
         android:name="com.example.buylist2.ui.fragment.ItemRegisterFragment"
-        android:label="ItemRegisterFragment" />
+        android:label="ItemRegisterFragment" >
+        <action
+            android:id="@+id/action_itemRegisterFragment_to_shoppingListRegisterFragment"
+            app:destination="@id/shoppingListRegisterFragment" />
+    </fragment>
 </navigation>

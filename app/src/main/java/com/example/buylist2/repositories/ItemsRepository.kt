@@ -6,27 +6,27 @@ import com.example.buylist2.model.ItemsModel
 
 class ItemsRepository (context: Context) {
 
-    private val loginDataBase = ShoppingDataBase.getDataBase(context).itemsDao()
+    private val shoppingDataBase = ShoppingDataBase.getDataBase(context).itemsDao()
 
     fun insertProduct(products: ItemsModel): Boolean {
-        return loginDataBase.insertProduct(products) > 0
+        return shoppingDataBase.insertProduct(products) > 0
     }
 
     fun updateProducts(products: ItemsModel): Boolean {
-        return loginDataBase.updateProduct(products) > 0
+        return shoppingDataBase.updateProduct(products) > 0
     }
 
     fun deleteList(id: Int) {
         val list = get(id)
-        loginDataBase.deleteProduct(list)
+        shoppingDataBase.deleteProduct(list)
     }
 
     fun get(id: Int): ItemsModel {
-        return loginDataBase.get(id)
+        return shoppingDataBase.get(id)
     }
 
     fun getAll(): List<ItemsModel>{
-        return loginDataBase.getAllProduct()
+        return shoppingDataBase.getAllProduct()
     }
 
     fun updateProductStatus(id: Int, complete: Boolean) {
@@ -36,6 +36,6 @@ class ItemsRepository (context: Context) {
     }
 
     fun getAllProducts(selectedListId: Int): List<ItemsModel> {
-        return loginDataBase.getAllProductsByListId(selectedListId)
+        return shoppingDataBase.getAllProductsByListId(selectedListId)
     }
 }
