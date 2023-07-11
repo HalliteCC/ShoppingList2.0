@@ -53,8 +53,24 @@ class ItemRegisterFragment : Fragment() {
             val item = binding.editDescription.text.toString()
             var strQ = binding.editQuantity.text.toString()
             val str = binding.editPrice.text.toString()
-            if (item != "" || str != "" || strQ != "") {
-                var quantity = strQ.toInt()
+            if (item == "") {
+                Toast.makeText(context, "FAIL", Toast.LENGTH_SHORT).show()
+            } else if (str == "" && strQ == "") {
+
+                var quantity = 0.0
+                var price = 0.0
+
+                val model = ItemsModel().apply {
+                    this.id = itemId
+                    this.item = item
+                    this.price = price
+                    this.quantity = quantity
+                    this.totalPrice = price * quantity
+                    this.listId = selectedListId
+                }
+                toast(model)
+            }else {
+                var quantity = strQ.toDouble()
                 var price = str.toDouble()
                 val model = ItemsModel().apply {
                     this.id = itemId
@@ -65,8 +81,6 @@ class ItemRegisterFragment : Fragment() {
                     this.listId = selectedListId
                 }
                 toast(model)
-            } else {
-                Toast.makeText(context, "FAIL", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -82,7 +96,7 @@ class ItemRegisterFragment : Fragment() {
     private fun loadSpinner() {
         shoppingListViewModel = ViewModelProvider(this).get(ShoppingListViewModel::class.java)
         val shoppingLists = shoppingListViewModel.spinner()
-        val nameList =
+       val nameList =
             mutableListOf("Select a place to shop") // Adiciona a mensagem no início da lista
         nameList.addAll(shoppingLists.map { it.listName })
 
@@ -107,7 +121,7 @@ class ItemRegisterFragment : Fragment() {
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
-                   //There's no need to use this cuz there will always be something selected
+
                 }
             }
     }
@@ -130,16 +144,18 @@ class ItemRegisterFragment : Fragment() {
         val str = binding.editPrice.text.toString()
 
         //Verificação se já existe a Lista
-        if (itemId == 0 && name != "" && strQ != "" && str != "") {
+        if (itemId == 0 && name != "" && selectedListId != 0) {
             viewModel.insertItem(productList)
             Toast.makeText(context, "Item Created", Toast.LENGTH_SHORT).show()
             backImmediate()
-        } else if (itemId != 0 && name != "" && strQ != "" && str != "") {
+        } else if (itemId != 0 && name != "" && strQ != "" && str != "" && selectedListId != 0) {
             viewModel.updateItem(productList)
             Toast.makeText(context, "Item Modified", Toast.LENGTH_SHORT).show()
             backImmediate()
+        } else if (selectedListId == 0){
+            Toast.makeText(context, "Please select a place to shop", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(context, "FAIL", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()
         }
     }
 

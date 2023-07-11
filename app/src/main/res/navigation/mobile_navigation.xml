@@ -63,7 +63,7 @@
     <fragment
         android:id="@+id/itemsById"
         android:name="com.example.buylist2.ui.fragment.ItemsById"
-        android:label="ItemsById" >
+        android:label="Items List" >
         <action
             android:id="@+id/action_itemsById_to_itemRegisterFragment"
             app:destination="@id/itemRegisterFragment" />

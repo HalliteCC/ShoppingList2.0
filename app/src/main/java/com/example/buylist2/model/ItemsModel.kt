@@ -24,7 +24,7 @@ class ItemsModel {
     var price: Double = 0.0
 
     @ColumnInfo(name = "quatity")
-    var quantity: Int = 0
+    var quantity: Double = 0.0
 
     @ColumnInfo(name = "completed")
     var complete: Boolean = false
