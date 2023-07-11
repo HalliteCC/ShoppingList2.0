@@ -12,11 +12,11 @@
         android:label="Shopping List"
         tools:layout="@layout/fragment_shopping_list" >
         <action
-            android:id="@+id/action_shopping_List_to_productsFragment"
-            app:destination="@id/items_list" />
-        <action
             android:id="@+id/action_shopping_List_to_shoppingListRegisterFragment"
             app:destination="@id/shoppingListRegisterFragment" />
+        <action
+            android:id="@+id/action_shopping_List_to_itemsById"
+            app:destination="@id/itemsById" />
     </fragment>
     <fragment
         android:id="@+id/items_list"
@@ -39,7 +39,7 @@
     <fragment
         android:id="@+id/userRegisterFragment"
         android:name="com.example.buylist2.ui.fragment.UserRegisterFragment"
-        android:label="UserRegisterFragment" >
+        android:label="User Register" >
         <action
             android:id="@+id/action_userRegisterFragment_to_loginActivity"
             app:destination="@id/loginActivity" />
@@ -55,9 +55,17 @@
     <fragment
         android:id="@+id/itemRegisterFragment"
         android:name="com.example.buylist2.ui.fragment.ItemRegisterFragment"
-        android:label="ItemRegisterFragment" >
+        android:label="Item Add" >
         <action
             android:id="@+id/action_itemRegisterFragment_to_shoppingListRegisterFragment"
             app:destination="@id/shoppingListRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsById"
+        android:name="com.example.buylist2.ui.fragment.ItemsById"
+        android:label="ItemsById" >
+        <action
+            android:id="@+id/action_itemsById_to_itemRegisterFragment"
+            app:destination="@id/itemRegisterFragment" />
     </fragment>
 </navigation>

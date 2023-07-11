@@ -12,6 +12,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.ui.*
 import com.example.buylist2.R
 import com.example.buylist2.databinding.ActivityMainBinding
+import com.example.buylist2.ui.fragment.ItemsByIdDirections
 import com.example.buylist2.ui.fragment.ItemsListFragmentDirections
 import com.example.buylist2.ui.fragment.ShoppingListFragmentDirections
 import com.example.buylist2.viewModel.MainViewModel
@@ -53,6 +54,9 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(navigation)
             }else if(currentFragmentId == R.id.items_list) {
                 navigation = ItemsListFragmentDirections.actionItemsListToItemRegisterFragment()
+                navController.navigate(navigation)
+            }else if (currentFragmentId == R.id.itemsById){
+                navigation = ItemsByIdDirections.actionItemsByIdToItemRegisterFragment()
                 navController.navigate(navigation)
             }
         }

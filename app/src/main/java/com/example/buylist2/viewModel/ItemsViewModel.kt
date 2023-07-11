@@ -33,7 +33,7 @@ class ItemsViewModel (application: Application) : AndroidViewModel(application){
         }
     }
 
-    fun getAllProducts(selectedListId: Int) {
+    fun getItemById(selectedListId: Int) {
         _product.value = productsRepository.getAllProducts(selectedListId)
     }
 }

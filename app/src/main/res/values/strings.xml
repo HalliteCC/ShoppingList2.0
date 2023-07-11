@@ -19,6 +19,7 @@
 
     <string name="ERROR_INTERNET_CONNECTION">This app required internet connection</string>
 
+    <string name="place_fist">"You have to create a place to shop first!"</string>
     <string name="successful_registration">Successful registration</string>
     <string name="already_registered">Email is already registered</string>
     <string name="USER_EXISTED">This user is already registered.</string>

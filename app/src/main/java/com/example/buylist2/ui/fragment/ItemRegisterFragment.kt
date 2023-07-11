@@ -8,11 +8,10 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import com.example.buylist2.constant.ShoppingConstant
 import com.example.buylist2.databinding.FragmentItemRegisterBinding
 import com.example.buylist2.model.ItemsModel
@@ -67,7 +66,7 @@ class ItemRegisterFragment : Fragment() {
                 }
                 toast(model)
             } else {
-                Toast.makeText(context, "FALHA", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "FAIL", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -84,7 +83,7 @@ class ItemRegisterFragment : Fragment() {
         shoppingListViewModel = ViewModelProvider(this).get(ShoppingListViewModel::class.java)
         val shoppingLists = shoppingListViewModel.spinner()
         val nameList =
-            mutableListOf("Selecione uma opção") // Adiciona a mensagem no início da lista
+            mutableListOf("Select a place to shop") // Adiciona a mensagem no início da lista
         nameList.addAll(shoppingLists.map { it.listName })
 
         val adapter = context?.let { ArrayAdapter(it, R.layout.simple_spinner_item, nameList) }
@@ -108,7 +107,7 @@ class ItemRegisterFragment : Fragment() {
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
-                    // Implemente este método se desejar lidar com a situação em que nada é selecionado
+                   //There's no need to use this cuz there will always be something selected
                 }
             }
     }
@@ -133,14 +132,14 @@ class ItemRegisterFragment : Fragment() {
         //Verificação se já existe a Lista
         if (itemId == 0 && name != "" && strQ != "" && str != "") {
             viewModel.insertItem(productList)
-            Toast.makeText(context, "Produto Criado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Item Created", Toast.LENGTH_SHORT).show()
             backImmediate()
         } else if (itemId != 0 && name != "" && strQ != "" && str != "") {
             viewModel.updateItem(productList)
-            Toast.makeText(context, "Produto Modificado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Item Modified", Toast.LENGTH_SHORT).show()
             backImmediate()
         } else {
-            Toast.makeText(context, "FALHA", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "FAIL", Toast.LENGTH_SHORT).show()
         }
     }
 

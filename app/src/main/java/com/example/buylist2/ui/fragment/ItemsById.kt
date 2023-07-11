@@ -9,7 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.buylist2.R
 import com.example.buylist2.adapter.ItemListAdapter
@@ -18,7 +18,7 @@ import com.example.buylist2.databinding.FragmentItemsBinding
 import com.example.buylist2.listener.ItemsListener
 import com.example.buylist2.viewModel.ItemsViewModel
 
-class ItemsListFragment : Fragment() {
+class ItemsById : Fragment() {
 
     private lateinit var viewModel: ItemsViewModel
     private var _binding: FragmentItemsBinding? = null
@@ -69,10 +69,9 @@ class ItemsListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getAll()
-        /*arguments?.getInt("ListID")?.let {
+        arguments?.getInt("ListID")?.let {
             viewModel.getItemById(it)
-        }*/
+        }
     }
 
 
